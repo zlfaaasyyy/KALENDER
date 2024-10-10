@@ -261,9 +261,9 @@ def akhir_pekan(tahun, bulan, hari):
 ```
 - **Deskripsi**: Fungsi ini mengecek apakah hari tertentu adalah akhir pekan (Sabtu-Minggu).
 - **Parameter**:
-  - `year` (*int*): tahun.
-  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
-  - `day` (*int*): tanggal.
+  - `tahun` (*int*): tahun.
+  - `bulan`: bulan (bisa dalam bentuk string/nama atau angka).
+  - `hari` (*int*): tanggal.
 - **Langkah-langkah**:
   - Memvalidasi tanggal.
   - Mengonversi bulan ke angka jika perlu.
@@ -278,9 +278,9 @@ def nama_hari(tahun, bulan, hari):
 ```
 - **Deskripsi**: Fungsi ini mengembalikan nama hari dalam Bahasa Indonesia untuk suatu tanggal.
 - **Parameter**:
-  - `year` (*int*): tahun.
-  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
-  - `day` (*int*): tanggal.
+  - `tahun` (*int*): tahun.
+  - `bulan`: bulan (bisa dalam bentuk string/nama atau angka).
+  - `hari` (*int*): tanggal.
 - **Langkah-langkah**:
   - Memvalidasi tanggal.
   - Mengonversi bulan ke angka jika perlu.
@@ -295,7 +295,7 @@ def konversi_bulan_int(bulan):
 ```
 - **Deskripsi**: Fungsi ini mengonversi nama bulan dari string menjadi angka, atau mengembalikan angka langsung jika inputnya sudah dalam bentuk integer.
 - **Parameter**:
-  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
+  - `bulan`: bulan (bisa dalam bentuk string/nama atau angka).
 - **Langkah-langkah**:
   - Jika bulan sudah berupa integer, langsung dikembalikan.
   - Jika bulan berupa string, fungsi akan mengubah huruf pertamanya menjadi huruf kapital dan mencocokkan nama bulan dengan yang ada di dictionary.
@@ -308,7 +308,7 @@ def bulan_dalam_indonesia_inverse(bulan_int):
 ```
 - **Deskripsi**: Fungsi ini mencari nama bulan berdasarkan angka bulannya.
 - **Parameter**:
-  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
+  - `bulan_int`: bulan (bisa dalam bentuk string/nama atau angka).
 - **Langkah-langkah**:
   - Melakukan iterasi melalui dictionary `bulan_dalam_indonesia`.
   - Jika ditemukan bulan yang sesuai dengan angka yang diberikan, fungsi mengembalikan nama bulannya.
