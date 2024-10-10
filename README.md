@@ -1,6 +1,6 @@
 # KALENDER
-## Fungsi 6
-##### Dokumentasi program
+### Fungsi 6
+### Dokumentasi program
 
 ##### 
 ```python
