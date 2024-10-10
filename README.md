@@ -1,7 +1,7 @@
 # KALENDER
 Kalender adalah salah satu package Python yang menyediakan berbagai fungsi terkait penanggalan. Package ini membantu kita untuk bekerja dengan kalender, menentukan hari libur, dan sebagainya. Beberapa fitur utamanya adalah menampilkan bulan atau tahun dalam bentuk kalender, menentukan hari dalam minggu untuk tanggal tertentu, dan menghitung hari kerja.
 
-### FUNGSI 1
+## FUNGSI 1
 Dokumentasi Program
 
 ### Deskripsi
@@ -76,8 +76,10 @@ tampilkan_kalender()
 
 Program ini ideal digunakan untuk menampilkan kalender dari bulan tertentu di tahun tertentu dengan format yang rapi. Ini dapat menjadi bagian dari aplikasi yang melibatkan penjadwalan atau manajemen waktu.
 
-### Fungsi 2
-Dokumentasi program
+## FUNGSI 2
+Deskripsi
+
+Program ini berfungsi untuk menampikan kalender dari sebuah bulan di tahun tertentu yang di inputkan oleh pengguna.Pengguna dapat memasukkan nama bulan dalam bahasa Indonesia atau angka bulan (1-12). Program akan memvalidasi input dan menampilkan kalender untuk bulan tersebut.
 
 #####
 ```python
@@ -130,8 +132,10 @@ Jika pengguna memasukkan 2020 sebagai tahun awal dan 2022 sebagai tahun akhir, k
 ### INFO TAMBAHAN
 Kode ini memungkinkan pengguna untuk melihat kalender dari satu tahun ke tahun lainnya dengan mudah menggunakan fungsi dari modul calendar di Python.
 
-### Fungsi 4
-fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
+## FUNGSI 4
+Deskripsi
+
+Fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
 
 ### Instal PIP holidays
 Fungsi ini memanfaatkan library holidays untuk mendapatkan data hari libur dan calendar untuk format tanggal. Oleh karena itu, untuk menjalankan fungsi ini, kita perlu menginstal library holidays terlebih dahulu menggunakan PIP.
@@ -168,7 +172,8 @@ Memanggil fungsi ambil_hari_libur untuk mendapatkan hari libur yang relevan berd
 ### Mengembalikan Hasil
 Mengembalikan list hasil yang berisi informasi tentang hari libur atau pesan yang menyatakan tidak ada hari libur.
 
-### FUNGSI 5
+## FUNGSI 5
+Deskripsi
 
 Fungsi ini digunakan untuk memeriksa apakah suatu tahun adalah tahun kabisat (leap year) atau bukan. Tahun kabisat adalah tahun yang jumlah harinya 366, terjadi setiap 4 tahun sekali, kecuali pada tahun yang kelipatan 100 tetapi bukan kelipatan 400.
 
@@ -193,7 +198,9 @@ Tahun kabisat terjadi jika memenuhi salah satu dari dua kondisi berikut:
 1. Tahun habis dibagi 4 dan tidak habis dibagi 100.
 2. Tahun habis dibagi 400.
 
-### Fungsi 6
+## FUNGSI 6
+Deskripsi
+Fungsi ini berfungsi untuk melakukan pengecekan apakah suatu tanggal merupakan hari kerja atau akhir pekan, dan juga untuk mendapatkan nama hari dalam Bahasa Indonesia.
 
 ```python
 import calendar
@@ -216,7 +223,7 @@ bulan_dalam_indonesia = {
 ```
 - **Deskripsi**: Kamus `bulan_dalam_indonesia` digunakan untuk memetakan nama-nama bulan dalam Bahasa Indonesia ke angka bulan yang sesuai. Misalnya, "Januari" dikonversi menjadi 1, "Februari" menjadi 2, dan seterusnya.
 
-#####
+### Fungsi weekday
 ```python
 def is_weekday(year, month, day):
 ```
@@ -232,7 +239,7 @@ def is_weekday(year, month, day):
   - Menampilkan apakah hari tersebut hari kerja atau akhir pekan dalam format `DD/MM/YYYY`.
   - Mengembalikan `True` jika hari adalah hari kerja, dan `False` jika tidak.
 
-#####
+### Fungsi weekend
 ```python
 def is_weekend(year, month, day):
 ```
@@ -246,7 +253,7 @@ def is_weekend(year, month, day):
   - Menampilkan apakah hari tersebut akhir pekan atau hari kerja dalam format `DD/MM/YYYY`.
   - Mengembalikan `True` jika hari adalah akhir pekan, dan `False` jika tidak.
 
-#####
+### Fungsi nama hari
 ```python
 def get_day_name(year, month, day):
 ```
@@ -260,7 +267,7 @@ def get_day_name(year, month, day):
   - Menampilkan nama hari dalam Bahasa Indonesia untuk tanggal tertentu.
   - Mengembalikan nama hari sebagai string.
 
-#####
+### Fungsi Mengkonversi nama bulan menjadi angka
 ```python
 def convert_month_to_int(month):
 ```
