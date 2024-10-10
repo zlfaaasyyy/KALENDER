@@ -15,9 +15,6 @@ nama_bulan = {
         "desember": 12
     }
 
-tahun = int(input("Masukkan tahun: "))
-inputan_bulan = input("Masukkan nama bulan atau angka bulan (1-12) : ")
-
 if inputan_bulan.isdigit():
         bulan = int(inputan_bulan)
     
