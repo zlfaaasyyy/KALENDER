@@ -21,11 +21,6 @@ bulan_dalam_indonesia = {
 #####
 ```python
 def is_weekday(year, month, day):
-    month = convert_month_to_int(month)
-    weekday = calendar.weekday(year, month, day)
-    is_weekday_result = weekday < 5
-    print(f"{day}/{month}/{year} adalah {'hari kerja' if is_weekday_result else 'hari libur'}")
-    return is_weekday_result
 ```
 - **Deskripsi**: Fungsi ini mengecek apakah hari tertentu adalah hari kerja (Senin-Jumat).
 - **Parameter**:
@@ -42,10 +37,6 @@ def is_weekday(year, month, day):
 #####
 ```python
 def is_weekend(year, month, day):
-    month = convert_month_to_int(month)
-    is_weekend_result = not is_weekday(year, month, day)
-    print(f"{day}/{month}/{year} adalah {'akhir pekan' if is_weekend_result else 'hari kerja'}")
-    return is_weekend_result
 ```
 - **Deskripsi**: Fungsi ini mengecek apakah hari tertentu adalah akhir pekan (Sabtu-Minggu).
 - **Parameter**:
@@ -60,11 +51,6 @@ def is_weekend(year, month, day):
 #####
 ```python
 def get_day_name(year, month, day):
-    month = convert_month_to_int(month)
-    weekday = calendar.weekday(year, month, day)
-    day_name = hari_dalam_indonesia[weekday]
-    print(f"Nama hari: {day_name}")
-    return day_name
 ```
 - **Deskripsi**: Fungsi ini mengembalikan nama hari dalam Bahasa Indonesia untuk tanggal tertentu.
 - **Parameter**:
@@ -79,16 +65,6 @@ def get_day_name(year, month, day):
 #####
 ```python
 def convert_month_to_int(month):
-    if isinstance(month, int):
-        return month
-    elif isinstance(month, str):
-        month = month.capitalize()
-        if month in bulan_dalam_indonesia:
-            return bulan_dalam_indonesia[month]
-        else:
-            raise ValueError("Nama bulan tidak valid.")
-    else:
-        raise TypeError("Bulan harus berupa string atau integer.")
 ```
 - **Deskripsi**: Fungsi ini mengonversi nama bulan (string) menjadi angka.
 - Jika input `month` adalah angka, fungsi langsung mengembalikannya.
