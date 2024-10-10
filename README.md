@@ -207,13 +207,13 @@ import calendar
 ```
 - **Deskripsi**: Kode ini mengimpor modul calendar, yang menyediakan berbagai fungsi untuk bekerja dengan kalender.
 
-##### 
+###
 ```python
 hari_dalam_indonesia = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
 ```
-- **Deskripsi**: List `hari_dalam_indonesia` menyimpan nama-nama hari dalam Bahasa Indonesia dari Senin hingga Minggu. Digunakan untuk mengonversi hasil dari fungsi `calendar.weekday()` ke nama hari dalam Bahasa Indonesia.
+- **Deskripsi**: List ini menyimpan nama-nama hari dalam Bahasa Indonesia dari Senin hingga Minggu. Setiap hari diindeks dari 0 (Senin) hingga 6 (Minggu).
 
-#####
+###
 ```python
 bulan_dalam_indonesia = {
     "Januari": 1, "Februari": 2, "Maret": 3, "April": 4,
@@ -221,65 +221,95 @@ bulan_dalam_indonesia = {
     "September": 9, "Oktober": 10, "November": 11, "Desember": 12
 }
 ```
-- **Deskripsi**: Kamus `bulan_dalam_indonesia` digunakan untuk memetakan nama-nama bulan dalam Bahasa Indonesia ke angka bulan yang sesuai. Misalnya, "Januari" dikonversi menjadi 1, "Februari" menjadi 2, dan seterusnya.
+- **Deskripsi**: Dictionary ini mengonversi nama bulan dalam Bahasa Indonesia menjadi angka yang digunakan dalam fungsi-fungsi kalender di Python (`calendar`). Januari = 1, Februari = 2, dan seterusnya.
 
-### Fungsi weekday
+### Fungsi `validasi_tanggal`
 ```python
-def is_weekday(year, month, day):
+def validasi_tanggal(tahun, bulan, hari):
 ```
-- **Deskripsi**: Fungsi ini mengecek apakah hari tertentu adalah hari kerja (Senin-Jumat).
+- **Deskripsi**: Fungsi ini memvalidasi apakah suatu tanggal tertentu valid berdasarkan tahun, bulan, dan hari.
 - **Parameter**:
-  - `year` (*int*): tahun.
-  - `month`: bulan (bisa dalam bentuk nama atau angka).
-  - `day` (*int*): tanggal.
-- Fungsi `calendar.weekday(year, month, day)` mengembalikan nilai integer dari 0 hingga 6:
-  - 0 adalah Senin, 1 adalah Selasa, dan seterusnya hingga 6 untuk Minggu.
-- Jika nilai yang dikembalikan oleh `calendar.weekday()` lebih kecil dari 5, artinya itu adalah hari kerja.
-- **Output**:
-  - Menampilkan apakah hari tersebut hari kerja atau akhir pekan dalam format `DD/MM/YYYY`.
-  - Mengembalikan `True` jika hari adalah hari kerja, dan `False` jika tidak.
-
-### Fungsi weekend
+  - `tahun` (*int*): tahun.
+  - `bulan`: bulan (bisa dalam bentuk string/nama atau angka).
+  - `hari` (*int*): tanggal.
+- **Langkah-langkah**:
+  - Mengonversi bulan dari string ke angka menggunakan fungsi `konversi_bulan_int`.
+  - Menggunakan fungsi `calendar.monthrange` untuk mendapatkan jumlah hari dalam bulan tertentu pada tahun tersebut.
+  - Memeriksa apakah hari yang diberikan berada dalam rentang jumlah hari yang valid.
+  - Jika tanggal tidak valid, program menampilkan pesan error dan mengembalikan nilai `False`.
+ 
+### Fungsi `hari_kerja`
 ```python
-def is_weekend(year, month, day):
+def hari_kerja(tahun, bulan, hari):
+```
+- **Deskripsi**: Memeriksa apakah suatu hari adalah hari kerja (Senin-Jumat).
+- **Parameter**:
+  - `tahun` (*int*): tahun.
+  - `bulan`: bulan (bisa dalam bentuk string/nama atau angka).
+  - `hari` (*int*): tanggal.
+- **Langkah-langkah**:
+  - Memvalidasi apakah tanggal yang diberikan valid menggunakan `validasi_tanggal`.
+  - Mengonversi bulan ke angka jika perlu.
+  - Menggunakan fungsi `calendar.weekday` untuk mendapatkan indeks hari (0 untuk Senin, 6 untuk Minggu).
+  - Memeriksa apakah indeks hari kurang dari 5 (Senin hingga Jumat) dan mengembalikan hasilnya.
+- **Output**:
+  - Menampilkan apakah hari tersebut adalah hari kerja atau libur.
+
+### Fungsi `akhir_pekan`
+```python
+def akhir_pekan(tahun, bulan, hari):
 ```
 - **Deskripsi**: Fungsi ini mengecek apakah hari tertentu adalah akhir pekan (Sabtu-Minggu).
 - **Parameter**:
   - `year` (*int*): tahun.
-  - `month`: bulan (bisa dalam bentuk nama atau angka).
+  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
   - `day` (*int*): tanggal.
-- Fungsi ini menggunakan `is_weekday()` untuk menentukan apakah hari tersebut adalah hari kerja. Jika bukan, maka itu akhir pekan.
+- **Langkah-langkah**:
+  - Memvalidasi tanggal.
+  - Mengonversi bulan ke angka jika perlu.
+  - Memanggil fungsi `hari_kerja` untuk memeriksa apakah hari tersebut adalah hari kerja.
+  - Jika bukan hari kerja, maka hasilnya adalah akhir pekan.
 - **Output**:
-  - Menampilkan apakah hari tersebut akhir pekan atau hari kerja dalam format `DD/MM/YYYY`.
-  - Mengembalikan `True` jika hari adalah akhir pekan, dan `False` jika tidak.
+  - Menampilkan apakah hari tersebut adalah akhir pekan atau hari kerja.
 
-### Fungsi nama hari
+### Fungsi `nama_hari`
 ```python
-def get_day_name(year, month, day):
+def nama_hari(tahun, bulan, hari):
 ```
-- **Deskripsi**: Fungsi ini mengembalikan nama hari dalam Bahasa Indonesia untuk tanggal tertentu.
+- **Deskripsi**: Fungsi ini mengembalikan nama hari dalam Bahasa Indonesia untuk suatu tanggal.
 - **Parameter**:
   - `year` (*int*): tahun.
-  - `month`: bulan (bisa dalam bentuk nama atau angka).
+  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
   - `day` (*int*): tanggal.
-- Fungsi `calendar.weekday(year, month, day)` mengembalikan nilai integer dari 0 hingga 6, yang kemudian digunakan untuk mengambil nama hari dari list `hari_dalam_indonesia`.
+- **Langkah-langkah**:
+  - Memvalidasi tanggal.
+  - Mengonversi bulan ke angka jika perlu.
+  - Menggunakan fungsi `calendar.weekday` untuk mendapatkan indeks hari.
+  - Mencari nama hari dari List `hari_dalam_indonesia` berdasarkan indeks.
 - **Output**:
-  - Menampilkan nama hari dalam Bahasa Indonesia untuk tanggal tertentu.
-  - Mengembalikan nama hari sebagai string.
+  - Menampilkan dan mengembalikan nama hari.
 
-### Fungsi mengonversi nama bulan menjadi angka
+### Fungsi `konversi_bulan_int`
 ```python
-def convert_month_to_int(month):
+def konversi_bulan_int(bulan):
 ```
-- **Deskripsi**: Fungsi ini mengonversi nama bulan (string) menjadi angka.
-- Jika input `month` adalah angka, fungsi langsung mengembalikannya.
-- Jika input adalah string, misalnya "Oktober", fungsi akan mengecek apakah string tersebut ada di dalam kamus `bulan_dalam_indonesia`. Jika ada, akan dikonversi ke angka bulan yang sesuai.
-- Jika string bulan tidak valid, maka fungsi akan melemparkan error `ValueError`.
-- Jika tipe data yang diterima bukan string atau integer, akan melemparkan `TypeError`.
-
-### Contoh Penggunaan
+- **Deskripsi**: Fungsi ini mengonversi nama bulan dari string menjadi angka, atau mengembalikan angka langsung jika inputnya sudah dalam bentuk integer.
+- **Parameter**:
+  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
+- **Langkah-langkah**:
+  - Jika bulan sudah berupa integer, langsung dikembalikan.
+  - Jika bulan berupa string, fungsi akan mengubah huruf pertamanya menjadi huruf kapital dan mencocokkan nama bulan dengan yang ada di dictionary.
+  - Jika nama bulan tidak ditemukan, akan muncul error.
+  - Jika tipe data selain string atau integer diberikan, fungsi akan mengembalikan error tipe.
+ 
+### Fungsi `bulan_dalam_indonesia_inverse`
 ```python
-year = 2024
-month = "Oktober"  # atau bisa juga "10"
-day = 9
+def bulan_dalam_indonesia_inverse(bulan_int):
 ```
+- **Deskripsi**: Fungsi ini mencari nama bulan berdasarkan angka bulannya.
+- **Parameter**:
+  - `month`: bulan (bisa dalam bentuk string/nama atau angka).
+- **Langkah-langkah**:
+  - Melakukan iterasi melalui dictionary `bulan_dalam_indonesia`.
+  - Jika ditemukan bulan yang sesuai dengan angka yang diberikan, fungsi mengembalikan nama bulannya.
+  - Jika tidak ditemukan, fungsi mengembalikan `None`.
