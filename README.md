@@ -1,5 +1,6 @@
 # KALENDER
-#### 6. Fungsi weekday dan weekend
+## Fungsi 6
+##### Dokumentasi program
 
 ##### 
 ```python
