@@ -1,7 +1,7 @@
 # KALENDER
 Kalender adalah salah satu package Python yang menyediakan berbagai fungsi terkait penanggalan. Package ini membantu kita untuk bekerja dengan kalender, menentukan hari libur, dan sebagainya. Beberapa fitur utamanya adalah menampilkan bulan atau tahun dalam bentuk kalender, menentukan hari dalam minggu untuk tanggal tertentu, dan menghitung hari kerja.
 
-## FUNGSI 1
+### FUNGSI 1
 Dokumentasi Program
 
 ### Deskripsi
@@ -75,3 +75,17 @@ tampilkan_kalender()
 ### Penggunaan
 
 Program ini ideal digunakan untuk menampilkan kalender dari bulan tertentu di tahun tertentu dengan format yang rapi. Ini dapat menjadi bagian dari aplikasi yang melibatkan penjadwalan atau manajemen waktu.
+
+### Fungsi 2
+Dokumentasi program
+
+#####
+```python
+tampilkan_bulan_range(tahun, bulan_awal, bulan_akhir):
+```
+- **Deskripsi**: Menampilkan bulan dalam satu tahun.
+- **Parameter**:
+  - `tahun` (*int*): Tahun yang ingin ditampilkan kalendernya. Contoh: 2024.
+  - `bulan_awal` (*int*): Bulan pertama dalam rentang (1 = Januari, 2 = Februari, dst.). Bulan ini harus berada dalam range 1 hingga 12.
+  - `bulan_akhir` (*int*): Bulan terakhir dalam rentang (1 = Januari, 2 = Februari, dst.). Bulan ini juga harus berada dalam range 1 hingga 12, dan tidak boleh lebih kecil dari `bulan_awal`.
+- **Return Value**: String : Fungsi mengembalikan representasi kalender dari bulan-bulan dalam rentang yang diberikan. Setiap bulan akan dipisahkan oleh baris kosong.
