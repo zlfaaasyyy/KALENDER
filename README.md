@@ -14,7 +14,6 @@ Program ini menggunakan modul calendar bawaan dari Python untuk menghasilkan tam
 
 ```python
 Kode/Codingan Lengkap
-
 import calendar
 
 ### Kamus nama bulan dalam bahasa Indonesia
@@ -34,32 +33,35 @@ nama_bulan = {
 }
 
 ### Meminta input tahun dan bulan dari pengguna
-tahun = int(input("Masukkan tahun: "))
-inputan_bulan = input("Masukkan nama bulan atau angka bulan (1-12) : ")
+def tampilkan_kalender():
+    while True:
+        try:
+            
+            ### Validasi apakah input bulan adalah angka
+            if inputan_bulan.isdigit():
+                bulan = int(inputan_bulan)
+                
+                ### Memastikan bulan berada dalam rentang yang valid
+                if 1 <= bulan <= 12:
+                    print(calendar.month(tahun, bulan))
+                    break
+                else:
+                    print("Bulan tidak valid. Silahkan masukkan angka antara 1 dan 12.")
+            
+            ### Memeriksa apakah nama bulan ada di dalam kamus
+            elif inputan_bulan in nama_bulan:
+                bulan = nama_bulan[inputan_bulan]
+                ### Menampilkan kalender
+                print(calendar.month(tahun, bulan))
+                break
+            else:
+                print("Nama bulan tidak valid. Silahkan coba lagi.")
+        except ValueError:
+            print("Input tidak valid. Silahkan coba lagi.")
 
-### Validasi apakah input bulan adalah angka
-if inputan_bulan.isdigit():
-    bulan = int(inputan_bulan)
-   
-    ### Memastikan bulan berada dalam rentang yang valid
-    if 1 <= bulan <= 12:
-        kal = calendar.month(tahun, bulan)
-        print(kal)
-    else:
-        print("Bulan tidak valid. Silakan masukkan angka antara 1 dan 12.")
-else:
-    ### Mengubah inputan menjadi huruf kecil
-    inputan_bulan = inputan_bulan.lower()
-    
-    ### Memeriksa apakah nama bulan ada di dalam kamus
-    if inputan_bulan in nama_bulan:
-        bulan = nama_bulan[inputan_bulan]
-        
-        ### Menampilkan kalender
-        kal = calendar.month(tahun, bulan)
-        print(kal)
-    else:
-        print("Nama bulan tidak valid. Silakan coba lagi.")
+
+tampilkan_kalender()
+
 ```
 ### Penjelasan Tambahan
 
