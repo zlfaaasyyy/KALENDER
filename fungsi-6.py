@@ -1,39 +1,44 @@
 import calendar
 
+# Daftar nama hari dalam Bahasa Indonesia
 hari_dalam_indonesia = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
+
+# Dictionary untuk mengonversi nama bulan (bahasa Indonesia) menjadi angka
 bulan_dalam_indonesia = {
     "Januari": 1, "Februari": 2, "Maret": 3, "April": 4,
     "Mei": 5, "Juni": 6, "Juli": 7, "Agustus": 8,
     "September": 9, "Oktober": 10, "November": 11, "Desember": 12
 }
 
-def is_weekday(year, month, day):
-    month = convert_month_to_int(month)
-    weekday = calendar.weekday(year, month, day)
-    is_weekday_result = weekday < 5
-    print(f"{day}/{month}/{year} adalah {'hari kerja' if is_weekday_result else 'hari libur'}")
-    return is_weekday_result
+def hari_kerja(tahun, bulan, hari):
+    bulan = konversi_bulan_int(bulan)
+    # menggunakan calendar.weekday untuk mendapatkan indeks hari (0 untuk Senin, dst)
+    indeks_hari = calendar.weekday(tahun, bulan, hari)
+    hari_kerja_result = indeks_hari < 5  # Senin-Jumat
+    print(f"{hari}/{bulan}/{tahun} adalah {'hari kerja' if hari_kerja_result else 'hari libur'}")
+    return hari_kerja_result
 
-def is_weekend(year, month, day):
-    month = convert_month_to_int(month)
-    is_weekend_result = not is_weekday(year, month, day)
-    print(f"{day}/{month}/{year} adalah {'akhir pekan' if is_weekend_result else 'hari kerja'}")
-    return is_weekend_result
+def akhir_pekan(tahun, bulan, hari):
+    bulan = konversi_bulan_int(bulan)
+    akhir_pekan_result = not hari_kerja(tahun, bulan, hari)  # Jika bukan hari kerja
+    print(f"{hari}/{bulan}/{tahun} adalah {'akhir pekan' if akhir_pekan_result else 'hari kerja'}")
+    return akhir_pekan_result
 
-def get_day_name(year, month, day):
-    month = convert_month_to_int(month)
-    weekday = calendar.weekday(year, month, day)
-    day_name = hari_dalam_indonesia[weekday]
-    print(f"Nama hari: {day_name}")
-    return day_name
+def nama_hari(tahun, bulan, hari):
+    bulan = konversi_bulan_int(bulan)
+    # Dapatkan indeks hari (0=Senin, 1=Selasa, dst.)
+    indeks_hari = calendar.weekday(tahun, bulan, hari)
+    nama_hari = hari_dalam_indonesia[indeks_hari]
+    print(f"Nama hari: {nama_hari}")
+    return nama_hari
 
-def convert_month_to_int(month):
-    if isinstance(month, int):
-        return month
-    elif isinstance(month, str):
-        month = month.capitalize()
-        if month in bulan_dalam_indonesia:
-            return bulan_dalam_indonesia[month]
+def konversi_bulan_int(bulan):
+    if isinstance(bulan, int):
+        return bulan
+    elif isinstance(bulan, str):
+        bulan = bulan.capitalize()
+        if bulan in bulan_dalam_indonesia:
+            return bulan_dalam_indonesia[bulan]
         else:
             raise ValueError("Nama bulan tidak valid.")
     else:
