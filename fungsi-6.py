@@ -37,4 +37,4 @@ def convert_month_to_int(month):
         else:
             raise ValueError("Nama bulan tidak valid.")
     else:
-        raise TypeError("Bulan harus berupa string atau integer.")
+        raise TypeError("Bulan harus berupa nama atau angka.")
