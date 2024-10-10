@@ -89,3 +89,43 @@ tampilkan_bulan_range(tahun, bulan_awal, bulan_akhir):
   - `bulan_awal` (*int*): Bulan pertama dalam rentang (1 = Januari, 2 = Februari, dst.). Bulan ini harus berada dalam range 1 hingga 12.
   - `bulan_akhir` (*int*): Bulan terakhir dalam rentang (1 = Januari, 2 = Februari, dst.). Bulan ini juga harus berada dalam range 1 hingga 12, dan tidak boleh lebih kecil dari `bulan_awal`.
 - **Return Value**: String : Fungsi mengembalikan representasi kalender dari bulan-bulan dalam rentang yang diberikan. Setiap bulan akan dipisahkan oleh baris kosong.
+
+### FUNGSI 3
+Deskripsi
+
+Kode ini berfungsi untuk menampilkan kalender lengkap dari tahun yang ditentukan oleh pengguna, dalam rentang antara tahun awal dan tahun akhir. Dengan menggunakan modul calendar, program meminta pengguna untuk memasukkan dua tahun, lalu mencetak kalender untuk setiap tahun dalam rentang tersebut. Hal ini berguna untuk perencanaan acara, pembelajaran tentang hari-hari tertentu, dan sebagai referensi cepat untuk melihat tanggal penting dalam beberapa tahun sekaligus.
+
+### IMPORT CALENDER
+import calendar
+   
+Kode ini mengimpor modul calendar, yang menyediakan berbagai fungsi untuk bekerja dengan kalender.
+
+### DEFINISI FUNGSI
+def tampilkan_kalender_range(start_year, end_year)
+   
+Fungsi ini, tampilkan_kalender_range, menerima dua argumen: start_year dan end_year. Fungsi ini akan menampilkan kalender untuk setiap tahun dalam rentang yang ditentukan.
+
+### LOOP UNTUK SETIAP TAHUN
+for year in range(start_year, end_year + 1):
+
+print(calendar.calendar(year))
+
+Dalam loop ini, range(start_year, end_year + 1) menghasilkan semua tahun dari start_year hingga end_year (inklusif). Untuk setiap tahun, fungsi calendar.calendar(year) dipanggil, yang menghasilkan string yang merepresentasikan kalender tahun tersebut, lalu mencetaknya.
+
+### INPUT TAHUN
+start_year = int(input("Masukkan tahun awal: "))
+   
+end_year = int(input("Masukkan tahun akhir: "))
+   
+Di sini, kode meminta pengguna untuk memasukkan tahun awal dan tahun akhir. Input yang diberikan oleh pengguna dikonversi menjadi tipe integer.
+
+### MEMANGGIL FUNGSI
+tampilkan_kalender_range(start_year, end_year)
+   
+Terakhir, fungsi tampilkan_kalender_range dipanggil dengan argumen yang diberikan oleh pengguna.
+
+### CONTOH PENGGUNAAN
+Jika pengguna memasukkan 2020 sebagai tahun awal dan 2022 sebagai tahun akhir, kode akan mencetak kalender untuk tahun 2020, 2021, dan 2022.
+
+### INFO TAMBAHAN
+Kode ini memungkinkan pengguna untuk melihat kalender dari satu tahun ke tahun lainnya dengan mudah menggunakan fungsi dari modul calendar di Python.
