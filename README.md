@@ -167,3 +167,28 @@ Memanggil fungsi ambil_hari_libur untuk mendapatkan hari libur yang relevan berd
 
 ### Mengembalikan Hasil
 Mengembalikan list hasil yang berisi informasi tentang hari libur atau pesan yang menyatakan tidak ada hari libur.
+
+### FUNGSI 5
+
+Fungsi ini digunakan untuk memeriksa apakah suatu tahun adalah tahun kabisat (leap year) atau bukan. Tahun kabisat adalah tahun yang jumlah harinya 366, terjadi setiap 4 tahun sekali, kecuali pada tahun yang kelipatan 100 tetapi bukan kelipatan 400.
+
+### Memasukkan tahun
+tahun (int): Memasukkan angka tahun yang akan diperiksa apakah merupakan tahun kabisat atau bukan.
+
+### Mengecek tahun adalah kabisat atau bukan
+```python
+def cek_tahun_kabisat(tahun):
+    if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
+```
+Menghitung apakah tahun yang diinput termasuk kabisat, dengan menggunakan rumus di atas.
+
+### Mengembalikan fungsi
+Pengembalian:
+
+string: Fungsi akan mengembalikan pesan dalam bentuk string yang menyatakan apakah tahun yang diberikan adalah tahun kabisat atau bukan.
+
+### Syarat-syarat suatu tahun termasuk kabisat
+Tahun kabisat terjadi jika memenuhi salah satu dari dua kondisi berikut:
+
+1. Tahun habis dibagi 4 dan tidak habis dibagi 100.
+2. Tahun habis dibagi 400.
