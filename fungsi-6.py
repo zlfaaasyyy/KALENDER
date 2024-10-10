@@ -10,23 +10,36 @@ bulan_dalam_indonesia = {
     "September": 9, "Oktober": 10, "November": 11, "Desember": 12
 }
 
-def hari_kerja(tahun, bulan, hari):
+def validasi_tanggal(tahun, bulan, hari):
     bulan = konversi_bulan_int(bulan)
-    # menggunakan calendar.weekday untuk mendapatkan indeks hari (0 untuk Senin, dst)
+    jumlah_hari = calendar.monthrange(tahun, bulan)[1]
+    if 1 <= hari <= jumlah_hari:
+        return True
+    else:
+        print(f"Tanggal {hari} tidak valid untuk bulan {bulan_dalam_indonesia_inverse(bulan)} di tahun {tahun}.")
+        return False
+
+def hari_kerja(tahun, bulan, hari):
+    if not validasi_tanggal(tahun, bulan, hari):
+        return None
+    bulan = konversi_bulan_int(bulan)
     indeks_hari = calendar.weekday(tahun, bulan, hari)
-    hari_kerja_result = indeks_hari < 5  # Senin-Jumat
+    hari_kerja_result = indeks_hari < 5
     print(f"{hari}/{bulan}/{tahun} adalah {'hari kerja' if hari_kerja_result else 'hari libur'}")
     return hari_kerja_result
 
 def akhir_pekan(tahun, bulan, hari):
+    if not validasi_tanggal(tahun, bulan, hari):
+        return None
     bulan = konversi_bulan_int(bulan)
-    akhir_pekan_result = not hari_kerja(tahun, bulan, hari)  # Jika bukan hari kerja
+    akhir_pekan_result = not hari_kerja(tahun, bulan, hari)
     print(f"{hari}/{bulan}/{tahun} adalah {'akhir pekan' if akhir_pekan_result else 'hari kerja'}")
     return akhir_pekan_result
 
 def nama_hari(tahun, bulan, hari):
+    if not validasi_tanggal(tahun, bulan, hari):
+        return None
     bulan = konversi_bulan_int(bulan)
-    # Dapatkan indeks hari (0=Senin, 1=Selasa, dst.)
     indeks_hari = calendar.weekday(tahun, bulan, hari)
     nama_hari = hari_dalam_indonesia[indeks_hari]
     print(f"Nama hari: {nama_hari}")
@@ -43,3 +56,9 @@ def konversi_bulan_int(bulan):
             raise ValueError("Nama bulan tidak valid.")
     else:
         raise TypeError("Bulan harus berupa nama atau angka.")
+
+def bulan_dalam_indonesia_inverse(bulan_int):
+    for nama_bulan, angka_bulan in bulan_dalam_indonesia.items():
+        if angka_bulan == bulan_int:
+            return nama_bulan
+    return None
