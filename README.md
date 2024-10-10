@@ -129,3 +129,41 @@ Jika pengguna memasukkan 2020 sebagai tahun awal dan 2022 sebagai tahun akhir, k
 
 ### INFO TAMBAHAN
 Kode ini memungkinkan pengguna untuk melihat kalender dari satu tahun ke tahun lainnya dengan mudah menggunakan fungsi dari modul calendar di Python.
+
+### Fungsi 4
+fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
+
+### Instal PIP holidays
+Fungsi ini memanfaatkan library holidays untuk mendapatkan data hari libur dan calendar untuk format tanggal. Oleh karena itu, untuk menjalankan fungsi ini, kita perlu menginstal library holidays terlebih dahulu menggunakan PIP.
+
+### Mengimpor Library
+```import holidays``` ```import calendar```
+
+Untuk menggunakan modul/library tersebut, bisa kita panggil dengan metode import(). Dimana import holidays, yang menyediakan informasi tentang hari libur nasional di berbagai negara, termasuk Indonesia. Dan import calendar, yang menyediakan fungsi terkait kalender, seperti nama bulan dan hari dalam sebulan.
+
+### Fungsi ambil_hari_libur
+```ambil_hari_libur(tahun,bulan)```
+
+Fungsi ini mengambil hari libur nasional untuk bulan dan tahun tertentu.
+
+Dalam fungsi ini kami menggunakan beberapa parameter :
+- tahun (int): Tahun yang ingin diperiksa
+- bulan (int): Bulan yang ingin diperiksa
+
+### Mengembalikan hasil :
+Mengembalikan dictionary hari_libur_bulanan, yang berisi hari libur nasional untuk bulan dan tahun yang diminta.
+
+### Fungsi tampilkan_hari_libur
+```tampilkan_hari_libur(tahun,bulan)```
+
+Fungsi ini menampilkan daftar hari libur nasional dalam format yang mudah dibaca.
+
+Beberapa paramter yang kami gunakan dalam fungsi ini :
+- tahun (int): Tahun untuk menampilkan hari libur.
+- bulan (int): Bulan untuk menampilkan hari libur (1-12).
+
+### Pemanggilan Fungsi 
+Memanggil fungsi ambil_hari_libur untuk mendapatkan hari libur yang relevan berdasarkan tahun dan bulan yang diberikan.
+
+### Mengembalikan Hasil
+Mengembalikan list hasil yang berisi informasi tentang hari libur atau pesan yang menyatakan tidak ada hari libur.
