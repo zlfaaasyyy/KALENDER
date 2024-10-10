@@ -1,6 +1,5 @@
 # KALENDER
 ### Fungsi 6
-### Dokumentasi program
 
 ```python
 import calendar
