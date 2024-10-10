@@ -37,7 +37,7 @@ Struktur Kode
 	•	Jika input valid, kalender bulan yang diminta ditampilkan menggunakan fungsi calendar.month(tahun, bulan).
 	•	Jika input tidak valid, program menampilkan pesan kesalahan yang relevan.
 
-Kode/Codingan Lengkap
+```Kode/Codingan Lengkap
 
 import calendar
 
@@ -84,7 +84,7 @@ else:
         print(kal)
     else:
         print("Nama bulan tidak valid. Silakan coba lagi.")
-
+```
 Penjelasan Tambahan
 
 	•	Fungsi calendar.month(tahun, bulan): Fungsi ini menampilkan kalender dalam bentuk string untuk bulan tertentu dalam format bulan dan tahun yang diberikan. Misalnya, calendar.month(2024, 10) akan menampilkan kalender untuk Oktober 2024.
