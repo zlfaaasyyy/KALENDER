@@ -2,6 +2,11 @@
 ### Fungsi 6
 ### Dokumentasi program
 
+```python
+import calendar
+```
+- **Deskripsi**: Kode ini mengimpor modul calendar, yang menyediakan berbagai fungsi untuk bekerja dengan kalender.
+
 ##### 
 ```python
 hari_dalam_indonesia = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
