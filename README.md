@@ -37,7 +37,8 @@ Struktur Kode
 	•	Jika input valid, kalender bulan yang diminta ditampilkan menggunakan fungsi calendar.month(tahun, bulan).
 	•	Jika input tidak valid, program menampilkan pesan kesalahan yang relevan.
 
-```Kode/Codingan Lengkap
+```python
+Kode/Codingan Lengkap
 
 import calendar
 
