@@ -66,8 +66,7 @@ tampilkan_kalender()
 ### Penjelasan Tambahan
 
 	•	Fungsi calendar.month(tahun, bulan): Fungsi ini menampilkan kalender dalam bentuk string untuk bulan tertentu dalam format bulan dan tahun yang diberikan. Misalnya, calendar.month(2024, 10) akan menampilkan kalender untuk Oktober 2024.
-	•	Fungsi input(): Digunakan untuk mengambil input dari pengguna. Karena inputan dari fungsi input() selalu berupa string, jika diperlukan, konversi ke tipe data lain seperti integer perlu dilakukan (seperti yang dilakukan pada input tahun).
-
+	
 ###  Pesan Kesalahan
 
 	•	Jika input bulan berupa angka di luar rentang 1-12, program akan menampilkan: "Bulan tidak valid. Silakan masukkan angka antara 1 dan 12."
