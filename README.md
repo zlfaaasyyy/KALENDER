@@ -96,31 +96,31 @@ Deskripsi
 Kode ini berfungsi untuk menampilkan kalender lengkap dari tahun yang ditentukan oleh pengguna, dalam rentang antara tahun awal dan tahun akhir. Dengan menggunakan modul calendar, program meminta pengguna untuk memasukkan dua tahun, lalu mencetak kalender untuk setiap tahun dalam rentang tersebut. Hal ini berguna untuk perencanaan acara, pembelajaran tentang hari-hari tertentu, dan sebagai referensi cepat untuk melihat tanggal penting dalam beberapa tahun sekaligus.
 
 ### IMPORT CALENDER
-import calendar
+```import calendar```
    
 Kode ini mengimpor modul calendar, yang menyediakan berbagai fungsi untuk bekerja dengan kalender.
 
 ### DEFINISI FUNGSI
-def tampilkan_kalender_range(start_year, end_year)
+```def tampilkan_kalender_range(start_year, end_year)```
    
 Fungsi ini, tampilkan_kalender_range, menerima dua argumen: start_year dan end_year. Fungsi ini akan menampilkan kalender untuk setiap tahun dalam rentang yang ditentukan.
 
 ### LOOP UNTUK SETIAP TAHUN
-for year in range(start_year, end_year + 1):
+```for year in range(start_year, end_year + 1):```
 
-print(calendar.calendar(year))
+```print(calendar.calendar(year))```
 
 Dalam loop ini, range(start_year, end_year + 1) menghasilkan semua tahun dari start_year hingga end_year (inklusif). Untuk setiap tahun, fungsi calendar.calendar(year) dipanggil, yang menghasilkan string yang merepresentasikan kalender tahun tersebut, lalu mencetaknya.
 
 ### INPUT TAHUN
-start_year = int(input("Masukkan tahun awal: "))
+```start_year = int(input("Masukkan tahun awal: "))```
    
-end_year = int(input("Masukkan tahun akhir: "))
+```end_year = int(input("Masukkan tahun akhir: "))```
    
 Di sini, kode meminta pengguna untuk memasukkan tahun awal dan tahun akhir. Input yang diberikan oleh pengguna dikonversi menjadi tipe integer.
 
 ### MEMANGGIL FUNGSI
-tampilkan_kalender_range(start_year, end_year)
+```tampilkan_kalender_range(start_year, end_year)```
    
 Terakhir, fungsi tampilkan_kalender_range dipanggil dengan argumen yang diberikan oleh pengguna.
 
