@@ -149,42 +149,51 @@ Kode ini memungkinkan pengguna untuk melihat kalender dari satu tahun ke tahun l
 ## FUNGSI 4
 Deskripsi
 
-Fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
+fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
 
-### Instal PIP holidays
-Fungsi ini memanfaatkan library holidays untuk mendapatkan data hari libur dan calendar untuk format tanggal. Oleh karena itu, untuk menjalankan fungsi ini, kita perlu menginstal library holidays terlebih dahulu menggunakan PIP.
+### Instalasi pip
+Fungsi ini memanfaatkan library holidays untuk mendapatkan data hari libur dan calendar untuk format tanggal. Oleh karena itu, Sebelum menggunakan fungsi ini, kita perlu menginstal library holidays terlebih dahulu dengan perintah berikut : ```pip instal holidays```
 
-### Mengimpor Library
-```import holidays``` ```import calendar```
+### Mengimpor library
+Untuk menggunakan modul/library tersebut, bisa kita panggil dengan metode import(). 
 
-Untuk menggunakan modul/library tersebut, bisa kita panggil dengan metode import(). Dimana import holidays, yang menyediakan informasi tentang hari libur nasional di berbagai negara, termasuk Indonesia. Dan import calendar, yang menyediakan fungsi terkait kalender, seperti nama bulan dan hari dalam sebulan.
+```import holidays``` : Mengimpor library ```holidays``` yang digunakan untuk mengambil data hari libur nasional di berbagai negara, termasuk Indonesia.
 
-### Fungsi ambil_hari_libur
-```ambil_hari_libur(tahun,bulan)```
+```import calendar``` :  Mengimpor library ```calendar``` yang menyediakan fungsi terkait kalender, seperti nama bulan dan tanggal.
 
-Fungsi ini mengambil hari libur nasional untuk bulan dan tahun tertentu.
+### Fungsi ambil_hari_libur(tahun,bulan)
+Fungsi ini bertujuan untuk mengambil hari libur nasional berdasarkan tahun dan bulan yang diberikan.
 
 Dalam fungsi ini kami menggunakan beberapa parameter :
-- tahun (int): Tahun yang ingin diperiksa
-- bulan (int): Bulan yang ingin diperiksa
+- tahun (int): Tahun yang ingin diperiksa (misalnya, 2024).
+- bulan (int): Bulan yang ingin diperiksa (1-12).
 
 ### Mengembalikan hasil :
-Mengembalikan dictionary hari_libur_bulanan, yang berisi hari libur nasional untuk bulan dan tahun yang diminta.
+Mengembalikan dictionary ```hari_libur_bulanan```, yang berisi hari libur nasional untuk bulan dan tahun yang diminta.
 
-### Fungsi tampilkan_hari_libur
-```tampilkan_hari_libur(tahun,bulan)```
+### Fungsi tampilkan_hari_libur(tahun,bulan)
+Fungsi ini bertujuan untuk menampilkan daftar hari libur nasional dalam format yang lebih mudah dibaca.
 
-Fungsi ini menampilkan daftar hari libur nasional dalam format yang mudah dibaca.
-
-Beberapa paramter yang kami gunakan dalam fungsi ini :
+Beberapa parameter yang kami gunakan dalam fungsi ini :
 - tahun (int): Tahun untuk menampilkan hari libur.
 - bulan (int): Bulan untuk menampilkan hari libur (1-12).
 
 ### Pemanggilan Fungsi 
-Memanggil fungsi ambil_hari_libur untuk mendapatkan hari libur yang relevan berdasarkan tahun dan bulan yang diberikan.
+```hari_libur_dalam_bulan = ambil_hari_libur(tahun, bulan)```
+
+Memanggil fungsi ```ambil_hari_libur``` untuk mendapatkan hari libur yang relevan berdasarkan tahun dan bulan yang diberikan.
 
 ### Mengembalikan Hasil
-Mengembalikan list hasil yang berisi informasi tentang hari libur atau pesan yang menyatakan tidak ada hari libur.
+Mengembalikan list hasil, yang berisi informasi tentang hari libur dalam format yang telah ditentukan atau pesan yang menyatakan tidak ada hari libur.
+
+### Contoh Penggunaan
+```tahun = 2024  # Ganti dengan tahun yang diinginkan```
+
+```bulan = 10    # Ganti dengan bulan yang diinginkan```
+
+```hasil_hari_libur = tampilkan_hari_libur(tahun, bulan)```
+
+Jika pengguna memasukkan parameter (tahun dan bulan) yang diinginkan (misalnya, tahun 2024 dan bulan 10). Maka program akan memanggil fungsi ```tampilkan_hari_libur``` dengan parameter yang ditentukan, dan menyimpan hasilnya dalam variabel ```hasil_hari_libur```.
 
 ## FUNGSI 5
 Deskripsi
