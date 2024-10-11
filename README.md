@@ -149,7 +149,7 @@ Kode ini memungkinkan pengguna untuk melihat kalender dari satu tahun ke tahun l
 ## FUNGSI 4
 Deskripsi
 
-fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
+Fungsi ini berfungsi untuk mengambil dan menampilkan hari libur nasional di Indonesia berdasarkan tahun dan bulan yang ditentukan.
 
 ### Instalasi pip
 Fungsi ini memanfaatkan library holidays untuk mendapatkan data hari libur dan calendar untuk format tanggal. Oleh karena itu, Sebelum menggunakan fungsi ini, kita perlu menginstal library holidays terlebih dahulu dengan perintah berikut : ```pip instal holidays```
