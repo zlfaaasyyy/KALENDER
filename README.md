@@ -81,6 +81,20 @@ Deskripsi
 
 Program ini berfungsi untuk menampikan kalender dari sebuah bulan di tahun tertentu yang di inputkan oleh pengguna.Pengguna dapat memasukkan nama bulan dalam bahasa Indonesia atau angka bulan (1-12). Program akan memvalidasi input dan menampilkan kalender untuk bulan tersebut.
 
+Import Calendar
+```import calendar```
+   
+- **Deskripsi**: Kode ini mengimpor modul calendar, yang menyediakan berbagai fungsi untuk bekerja dengan kalender.
+
+```python
+bulan = {
+    "januari": 1, "februari": 2, "maret": 3, "april": 4, "mei": 5,
+    "juni": 6,  "juli": 7, "agustus": 8, "september": 9, "oktober": 10,
+    "november": 11, "desember": 12      
+}
+```
+- **Deskripsi**: Kode tersebut mendefinisikan sebuah dictionary bernama bulan yang berisi pasangan key-value, di mana key-nya adalah nama-nama bulan dari Januari hingga Desember, dan value-nya adalah angka yang mewakili urutan bulan dalam setahun. Dictionary ini digunakan untuk memetakan nama bulan ke angka yang sesuai, dengan key berupa string nama bulan dan value berupa angka antara 1 hingga 12.
+
 #####
 ```python
 tampilkan_bulan_range(tahun, bulan_awal, bulan_akhir):
